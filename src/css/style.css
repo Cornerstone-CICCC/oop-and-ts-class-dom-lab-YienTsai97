@@ -66,6 +66,14 @@ button {
   color: #aaa;
 }
 
+.todo-list li .btn-mark:After {
+  content: "Mark Complete";
+}
+
+.todo-list li.completed .btn-mark:After {
+  content: "Mark Incomplete";
+}
+
 .todo-list button {
   background-color: white;
   cursor: pointer;

@@ -2,6 +2,7 @@ import { Component } from "../common/Component.js";
 import { AddTodo } from "./AddTodo.js";
 import { TodoList } from "./TodoList.js";
 
+
 export class App extends Component {
   render() {
     const container = document.createElement('div')
@@ -21,3 +22,4 @@ export class App extends Component {
     return container;
   }
 }
+
