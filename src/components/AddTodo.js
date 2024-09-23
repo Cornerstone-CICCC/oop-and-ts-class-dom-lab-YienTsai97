@@ -7,9 +7,9 @@ export class AddTodo extends Component {
   }
 
   addTodoInput() {
-    const todoInputValue = document.querySelector("input").value; //worked
-    console.log(this.props.todoContext)
-    this.props.todoContext.addTodo(todoInputValue) //doesn't work, cannot read addTodo()
+    const todoInputValue = document.querySelector("input").value;
+    this.props.todoContext.addTodo(todoInputValue)
+    document.querySelector("input").value = ""
   }
 
   render() {

@@ -28,8 +28,8 @@ export class TodoItem extends Component {
     </div>
     `
 
-    todo.querySelector(`btn-mark`).addEventListener("click", this.markTodoItem)
-    todo.querySelector(`btn-delete`).addEventListener("click", this.deleteTodoItem)
+    todo.querySelector(`.btn-mark`).addEventListener("click", this.markTodoItem)
+    todo.querySelector(`.btn-delete`).addEventListener("click", this.deleteTodoItem)
 
     return todo;
   }

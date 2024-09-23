@@ -7,7 +7,6 @@ export class TodoContext {
 
     addTodo(todo) {
         this.todos.push(todo)
-        console.log(`addTodo() activated //+${this.todo}`)
         this.notifyListeners()
     }
 
@@ -16,25 +15,22 @@ export class TodoContext {
     }
 
     markTodo() {
-        this.parentElement.classList.toggle('completed')
-        console.log("markTodo activated")
+        const todoElement = event.target.closest('li');
+        todoElement.classList.toggle('completed')
     }
 
     deleteTodo() {
-        console.log("Del-Todo activated")
-        this.todos.filter(todo => todo != todo)
+        const todoElement = event.target.closest('li').querySelector('span').innerText;
+        this.todos = this.todos.filter(todo => todo != todoElement)
         this.notifyListeners()
-
     }
 
     subscribe(listener) {
         this.listeners.push(listener)
-        console.log("subscribe(listener) activated")
     }
 
     notifyListeners() {
         this.listeners.forEach(listener => listener(this.todos))
-        console.log("notifyListeners() activated")
     }
 }
 

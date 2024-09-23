@@ -6,16 +6,20 @@ export class TodoList extends Component {
     super(props)
     this.state = { todos: [] }
     this.updateList = this.updateList.bind(this)
-    //this.props.todoContext.subscribe(this.updateList)
+    this.props.todoContext.subscribe(this.updateList)
   }
 
   updateList(todos) {
     this.state.todos = todos
-
     this.ul.innerHTML = ``
-    const todoItem = new TodoItem
-    const todoItems = this.state.todos.map(todo => todoItem).join('')
-    this.ul.innerHTML = todoItems
+
+    this.state.todos.forEach(todo => {
+      const todoItem = new TodoItem({
+        todo: todo,
+        todoContext: this.props.todoContext
+      }).render()
+      this.ul.appendChild(todoItem)
+    })
 
   }
 

@@ -12,4 +12,4 @@ export class Component {
     this.element = this.render()
     container.appendChild(this.element)
   }
-}
+}  
